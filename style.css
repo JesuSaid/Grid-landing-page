@@ -1,0 +1,23 @@
+:root {
+    /* Variables globales */
+    --color-background: hsl(228, 100%, 60%);
+    --color-background-muted: hsl(228, 99%, 58%);
+    --color-background-selected: hsl(220, 100%, 64%);
+    --color-text: hsl(0, 0%, 100%);
+    --color-text-muted: hsl(224, 100%, 95%);
+    --font-family-base: Inter, sans-serif;
+}
+
+*, *::after, *::before  {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-family-base);
+    font-size: 1rem;
+    font-weight: 400;
+}
+

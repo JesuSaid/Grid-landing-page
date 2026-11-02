@@ -4,73 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
   <title>Grid landing page</title>
 </head>
 <body>
-  <header>
-    <p>
+  <header class="site-header">
+    <p class="site-header__brand">
       <!-- Nav -->
       Bridge Collective
     </p>
-    <div>
-      <button type="button" aria-label="Open navigation menu"><img src="./assets/images/icon-menu.svg" alt=""></button>
-      <nav>
+    <div class="site-nav">
+      <button class="site-nav__toggle" type="button" aria-label="Open navigation menu"><img src="./assets/images/icon-menu.svg" alt=""></button>
+      <nav class="site-nav__panel">
         <!-- Menu panel — hidden until the hamburger is activated -->
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Our Work</a></li>
-          <li><a href="#">Partners</a></li>
-          <li><a href="#">Annual Report</a></li>
-          <li><a href="#">Donate</a></li>
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a href="#" class="site-nav__link">About</a></li>
+          <li class="site-nav__item"><a href="#" class="site-nav__link">Our Work</a></li>
+          <li class="site-nav__item"><a href="#" class="site-nav__link">Partners</a></li>
+          <li class="site-nav__item"><a href="#" class="site-nav__link">Annual Report</a></li>
+          <li class="site-nav__item"><a href="#" class="site-nav__link">Donate</a></li>
         </ul>
       </nav>
     </div>
   </header>
   
-  <main>
-    <section>
+  <main class="main-content">
+    <section class="main-content__hero">
       <!-- Hero -->
       <h1>A classroom for every child.</h1>
       <p>We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.</p>
     </section>
     
-    <ul>
+    <ul class="stats">
       <!-- Stats -->
        <!-- Students -->
-      <li>
-        <img src="./assets/images/icon-sparkle.svg" alt="">
-        <p>2.4M</p>
-        <p>Students reached</p>
-        <p>Across 31 countries since 2011.</p>
+      <li class="stats__item">
+        <img class="stats__icon" src="./assets/images/icon-sparkle.svg" alt="">
+        <p class="stats__value">2.4M</p>
+        <p class="stats__label">Students reached</p>
+        <p class="stats__description">Across 31 countries since 2011.</p>
       </li>
 
       <!-- Schools -->
-      <li>
-        <img src="./assets/images/icon-plus.svg" alt="">
-        <p>1,284</p>
-        <p>Schools partnered</p>
-        <p>In 14 countries, from Kenya to Guatemala.</p>
+      <li class="stats__item">
+        <img class="stats__icon" src="./assets/images/icon-plus.svg" alt="">
+        <p class="stats__value">1,284</p>
+        <p class="stats__label">Schools partnered</p>
+        <p class="stats__description">In 14 countries, from Kenya to Guatemala.</p>
       </li>
 
       <!-- Teachers -->
-      <li>
-        <img src="./assets/images/icon-arrow-right.svg" alt="">
-        <p>38K</p>
-        <p>Teachers trained</p>
-        <p>Equipped with modern tools and methodology.</p>
+      <li class="stats__item">
+        <img class="stats__icon" src="./assets/images/icon-arrow-right.svg" alt="">
+        <p class="stats__value">38K</p>
+        <p class="stats__label">Teachers trained</p>
+        <p class="stats__description">Equipped with modern tools and methodology.</p>
       </li>
 
       <!-- Graduation -->
-      <li>
-        <img src="./assets/images/icon-trending-up.svg" alt="">
-        <p>3.1×</p>
-        <p>Graduation lift</p>
-        <p>Partner schools outperform national averages 3x.</p>
+      <li class="stats__item">
+        <img class="stats__icon" src="./assets/images/icon-trending-up.svg" alt="">
+        <p class="stats__value">3.1×</p>
+        <p class="stats__label">Graduation lift</p>
+        <p class="stats__description">Partner schools outperform national averages 3x.</p>
       </li>
     </ul>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <!-- Footer -->
     <p>© 2026 Bridge Collective</p>
     <p>Registered charity 12345678</p>

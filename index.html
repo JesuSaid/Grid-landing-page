@@ -14,10 +14,12 @@
       <!-- Nav -->
       Bridge Collective
     </p>
-    <div class="site-nav">
-      <button class="site-nav__toggle" type="button" aria-label="Open navigation menu"><img src="./assets/images/icon-menu.svg" alt=""></button>
+    <details class="site-nav">
+      <summary class="site-nav__toggle" aria-label="Navigation menu">
+        <img src="./assets/images/icon-menu.svg" alt="" class="site-nav__icon-menu">
+        <img src="./assets/images/icon-close.svg" alt="" class="site-nav__icon-close">
+      </summary>
       <nav class="site-nav__panel">
-        <!-- Menu panel — hidden until the hamburger is activated -->
         <ul class="site-nav__list">
           <li class="site-nav__item"><a href="#" class="site-nav__link">About</a></li>
           <li class="site-nav__item"><a href="#" class="site-nav__link">Our Work</a></li>
@@ -26,9 +28,9 @@
           <li class="site-nav__item"><a href="#" class="site-nav__link">Donate</a></li>
         </ul>
       </nav>
-    </div>
+    </details>
   </header>
-  
+
   <main class="main-content">
     <section class="main-content__hero">
       <!-- Hero -->

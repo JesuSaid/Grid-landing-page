@@ -1,112 +1,163 @@
-# Frontend Mentor - Grid landing page
+# Frontend Mentor - Grid landing page solution
 
-![Design preview for the Grid landing page coding challenge](./preview.jpg)
+**English** | [Español](./README-es.md)
 
-## Welcome! 👋
+This is my solution to the [Grid landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/grid-landing-page). The goal was to build a responsive landing page for a fictional education nonprofit using only HTML and CSS.
 
-Thanks for checking out this coding challenge.
+## Table of contents
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshots](#screenshots)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [Key decisions](#key-decisions)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+  - [AI collaboration](#ai-collaboration)
+- [Author](#author)
 
-**To do this challenge, you need a basic understanding of HTML and CSS.** A little JavaScript is optional for opening and closing the navigation menu.
+## Overview
 
-## The challenge
+### The challenge
 
-Build a landing page hero section for a fictional education nonprofit and get it looking as close to the design as possible.
+Users should be able to:
 
-The page splits a headline and description on the left against a 2x2 grid of impact stats on the right, with a thin nav above and a footer strip below. There's no imagery to lean on, so the layout, the spacing rhythm, and the hairline dividers between the cards are doing all the work. The grid is a good excuse to reach for CSS Grid, and the three viewports each rearrange it differently.
+- View an optimal layout for the page depending on their screen size.
+- Open and close the navigation menu without relying on JavaScript.
+- See hover and focus-visible states for the relevant elements.
+- View the content without horizontal overflow from 320px wide screens.
+- Navigate the interactive elements with a keyboard.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### Screenshots
 
-Your users should be able to:
+#### Desktop
 
-- View the optimal layout for the page depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
-- Open and close the navigation menu at any screen size (optional JavaScript)
+![Desktop version of the Grid landing page](./assets/images/Desktop.png)
 
-## Ideas to test yourself
+#### Mobile
 
-The design gives you plenty to build. If you want to push further, here are some optional extensions to try:
+![Mobile version of the Grid landing page](./assets/images/Mobile.png)
 
-- Animate the menu panel so it slides in from the edge instead of appearing instantly
-- Count the stat numbers up from zero when the page loads
-- Trap keyboard focus inside the menu while it's open so tabbing can't escape behind it
-- Respect `prefers-reduced-motion` so any animation turns itself off for people who ask for it
-- Load the four stats from a JSON file instead of hardcoding them in your HTML
-- Turn the page into a PWA so it can be installed and viewed offline
+### Links
 
-## Getting started
+- Solution repository: [GitHub - Grid landing page](https://github.com/JesuSaid/Grid-landing-page)
+- Live site: [Grid landing page](https://jesusaid.github.io/Grid-landing-page/)
 
-### What's included
+## My process
 
-Your task is to build out the project to the designs inside the `/design` folder. You'll find a mobile and a desktop version of the design, plus the open navigation menu and the hover states.
+### Built with
 
-In your download:
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid
+- Flexbox
+- CSS logical properties
+- Mobile-first workflow
+- A locally hosted variable font with `@font-face`
+- BEM naming convention
+- Git commits organized around meaningful milestones
 
-- Mobile and desktop designs (JPG format)
-- All required assets in the `/assets` folder
-- The Inter variable font file (or link to Google Fonts)
-- `style-guide.md` with colors, fonts, and other design specs
+The project does not use JavaScript. The navigation menu was implemented with the native `details` and `summary` elements.
 
-**Want more accurate builds?** The designs are in JPG static format, which means you'll need to use your best judgment for styles such as `font-size`, `padding`, and `margin`. If you'd like the Figma design file to help build a more accurate solution faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+### Key decisions
 
-## Using AI coding assistants
+#### Semantic structure
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+The page is organized with `header`, `nav`, `main`, `section`, a list of statistics, and `footer`. The statistic icons are decorative, so they use empty alternative text.
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+The statistics are marked up as a list because they form a collection of related data rather than a group of containers without meaning.
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+#### Navigation without JavaScript
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+To keep the solution limited to HTML and CSS, I used `details` and `summary`. These native elements allow the menu to be opened and closed with either a pointer or a keyboard.
 
-## Building your project
+```html
+<details class="site-nav">
+  <summary class="site-nav__toggle" aria-label="Navigation menu">
+    <!-- Menu icons -->
+  </summary>
+  <nav class="site-nav__panel">
+    <!-- Navigation links -->
+  </nav>
+</details>
+```
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+#### Statistics grid
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+Each statistic card uses its own grid. This places the icon and value at the top, leaves a flexible track in the middle, and positions the label and description at the bottom without adding presentation-only containers to the HTML.
 
-### Want some support on the challenge?
+```css
+.stats__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr auto auto;
+}
+```
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+On wider screens, the statistics collection becomes a two-column, two-row grid.
 
-## Deploying your project
+#### Mobile-first workflow
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+The base styles target small screens. Enhancements for the navigation, footer, and main content are added with `min-width` media queries.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+The layout was tested at 320px, 375px, 768px, and 1440px. Widths close to the breakpoints were also checked to avoid unexpected layout jumps.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+#### Design system
 
-## Submitting your solution
+Reusable colors, typography, and component sizes are centralized in `:root`. The custom properties use semantic names such as `--color-background`, `--color-text`, and `--header-block-size`.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
+Logical properties such as `min-block-size`, `padding-inline-end`, `border-block-start`, and `border-inline-start` describe the layout according to the writing direction.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+### What I learned
 
-**We strongly recommend overwriting this `README.md` with a custom one.** We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code. The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings.
+- Starting with semantic HTML makes the visual implementation easier to reason about.
+- Mobile-first means creating a functional small-screen base and progressively enhancing it.
+- A breakpoint should be chosen according to the space required by the content, not only by device labels.
+- CSS Grid can position content in rows and columns without adding unnecessary wrappers.
+- A `1fr` track can absorb available space and push other elements toward opposite ends.
+- Grid percentages, `auto`, and fractional units do not express the same sizing behavior.
+- Logical properties make styles more adaptable and communicate their purpose more clearly.
+- Native styles on lists, paragraphs, and `summary` should be understood before overriding them.
+- Keyboard focus states are as important as hover states for accessible navigation.
+- CSS variables are most useful when they represent reusable design decisions.
+- Testing several viewport widths helps reveal overflow and unexpected changes between breakpoints.
+- Commits are clearer when they represent complete milestones such as navigation, footer, or responsive layout instead of individual file changes.
 
-## Sharing your solution
+### Continued development
 
-There are multiple places you can share your solution:
+In future projects, I want to continue practicing:
 
-1. Submit it on the platform and share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community)
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+- Choosing breakpoints based on the content.
+- Using `min()`, `max()`, `calc()`, and `clamp()` when they make responsive values clearer.
+- Testing accessibility with keyboards and screen readers.
+- Respecting `prefers-reduced-motion` when adding animations.
+- Validating HTML and CSS before publishing.
+- Comparing implementations with design references more precisely.
 
-## Got feedback for us?
+### Useful resources
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+- [MDN - CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout) - Helped me understand grid tracks, rows, columns, and item placement.
+- [MDN - Responsive design](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design) - A useful overview of responsive layouts and media queries.
+- [MDN - CSS logical properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values) - Reference for writing-direction-aware properties.
+- [MDN - The details element](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details) - Documentation for the native element used by the navigation menu.
+- [Frontend Mentor](https://www.frontendmentor.io/) - Provided the challenge, design references, and project assets.
 
-**This challenge is completely free. Please share it with anyone who will find it useful for practice.**
+### AI collaboration
 
-**Have fun building!** 🚀
+I used ChatGPT/Codex as a development mentor and review tool. It helped me:
+
+- Review incremental HTML and CSS changes.
+- Understand semantic HTML, accessibility, Flexbox, and Grid concepts.
+- Identify possible overflow and breakpoint issues.
+- Compare implementation decisions with the supplied designs.
+- Organize the work into meaningful Git commits.
+- Consider improvements without replacing the process of writing and testing the code myself.
+
+The project was developed incrementally. I implemented and verified each decision so that I understood why it worked instead of copying a complete generated solution.
+
+## Author
+
+- GitHub: [@JesuSaid](https://github.com/JesuSaid)
